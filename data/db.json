@@ -1,6 +1,6 @@
 {
   "ids": {
-    "Todo": 6
+    "Todo": 9
   },
   "models": {
     "Todo": {
@@ -8,7 +8,10 @@
       "2": "{\"title\":\"destroy alderaan\",\"desc\":\"Make sure there are no survivors left!\",\"id\":2}",
       "3": "{\"title\":\"play space invaders\",\"desc\":\"Become the very best!\",\"id\":3}",
       "4": "{\"title\":\"crush rebel scum\",\"desc\":\"Every.Last.One.\",\"id\":4}",
-      "5": "{\"title\":\"get the milk\",\"id\":5}"
+      "5": "{\"title\":\"get the milk\",\"id\":5}",
+      "6": "{\"title\":\"Go to grocery store\",\"desc\":\"Go to the nearby neighborhood grocery store.\",\"isComplete\":false,\"remindAtAddress\":\"\",\"id\":6}",
+      "7": "{\"title\":\"Go to grocery store\",\"desc\":\"Go to the nearby neighborhood grocery store.\",\"isComplete\":false,\"remindAtAddress\":\"20 W 34th St, New York, NY 10001\",\"remindAtGeo\":\"40.748756,-73.98534\",\"id\":7}",
+      "8": "{\"title\":\"Go to grocery store\",\"desc\":\"Go to the nearby neighborhood grocery store.\",\"isComplete\":false,\"remindAtAddress\":\"20 W 34th St, New York, NY 10001\",\"remindAtGeo\":\"40.748756,-73.98534\",\"id\":8}"
     }
   }
 }
