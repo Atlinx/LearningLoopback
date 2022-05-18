@@ -1,17 +1,31 @@
 {
   "ids": {
-    "Todo": 9
+    "Todo": 5,
+    "TodoList": 3,
+    "TodoListImage": 3,
+    "User": 3,
+    "UserCredentials": 3
   },
   "models": {
     "Todo": {
-      "1": "{\"title\":\"Take over the galaxy\",\"desc\":\"MWAHAHAHAHAHAHAHAHAHAHAHAHAMWAHAHAHAHAHAHAHAHAHAHAHAHA\",\"id\":1}",
-      "2": "{\"title\":\"destroy alderaan\",\"desc\":\"Make sure there are no survivors left!\",\"id\":2}",
-      "3": "{\"title\":\"play space invaders\",\"desc\":\"Become the very best!\",\"id\":3}",
-      "4": "{\"title\":\"crush rebel scum\",\"desc\":\"Every.Last.One.\",\"id\":4}",
-      "5": "{\"title\":\"get the milk\",\"id\":5}",
-      "6": "{\"title\":\"Go to grocery store\",\"desc\":\"Go to the nearby neighborhood grocery store.\",\"isComplete\":false,\"remindAtAddress\":\"\",\"id\":6}",
-      "7": "{\"title\":\"Go to grocery store\",\"desc\":\"Go to the nearby neighborhood grocery store.\",\"isComplete\":false,\"remindAtAddress\":\"20 W 34th St, New York, NY 10001\",\"remindAtGeo\":\"40.748756,-73.98534\",\"id\":7}",
-      "8": "{\"title\":\"Go to grocery store\",\"desc\":\"Go to the nearby neighborhood grocery store.\",\"isComplete\":false,\"remindAtAddress\":\"20 W 34th St, New York, NY 10001\",\"remindAtGeo\":\"40.748756,-73.98534\",\"id\":8}"
+      "1": "{\"title\":\"Take over the galaxy\",\"desc\":\"MWAHAHAHAHAHAHAHAHAHAHAHAHAMWAHAHAHAHAHAHAHAHAHAHAHAHA\",\"todoListId\":1,\"id\":1}",
+      "2": "{\"title\":\"destroy alderaan\",\"desc\":\"Make sure there are no survivors left!\",\"todoListId\":1,\"id\":2}",
+      "3": "{\"title\":\"play space invaders\",\"desc\":\"Become the very best!\",\"todoListId\":2,\"id\":3}",
+      "4": "{\"title\":\"crush rebel scum\",\"desc\":\"Every.Last.One.\",\"todoListId\":1,\"id\":4}"
+    },
+    "TodoList": {
+      "1": "{\"title\":\"Sith lord's check list\",\"color\":\"blue\",\"id\":1}",
+      "2": "{\"title\":\"My daily chores\",\"color\":\"red\",\"id\":2}"
+    },
+    "TodoListImage": {
+      "1": "{\"value\":\"EpicImage.png\",\"todoListId\":1,\"id\":1}",
+      "2": "{\"value\":\"The quick brown fox jumps over the lazy dog.png\",\"todoListId\":2,\"id\":2}"
+    },
+    "User": {
+      "f4b8de9a-bfbb-4858-9023-d1dbadbe2369": "{\"id\":\"f4b8de9a-bfbb-4858-9023-d1dbadbe2369\",\"username\":\"joe\",\"email\":\"joemama@mail.com\"}"
+    },
+    "UserCredentials": {
+      "ce1a24c5-1415-4919-a4a9-4fc96a8f4409": "{\"id\":\"ce1a24c5-1415-4919-a4a9-4fc96a8f4409\",\"password\":\"$2a$10$waf3.oI7715OrvKq1iTj1uMA8GIBXqDKhkOvYf8W6jJztTEVc9mBC\",\"userId\":\"f4b8de9a-bfbb-4858-9023-d1dbadbe2369\"}"
     }
   }
 }

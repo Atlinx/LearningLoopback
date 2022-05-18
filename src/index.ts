@@ -15,6 +15,8 @@ export async function main(options: ApplicationConfig = {}) {
 }
 
 if (require.main === module) {
+  // Load env file
+  require('dotenv').config();
   // Run the application
   const config = {
     rest: {

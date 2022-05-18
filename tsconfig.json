@@ -1,9 +1,38 @@
 {
   "$schema": "http://json.schemastore.org/tsconfig",
-  "extends": "@loopback/build/config/tsconfig.common.json",
+  "extends": "./node_modules/@loopback/build/config/tsconfig.common.json",
   "compilerOptions": {
     "outDir": "dist",
-    "rootDir": "src"
+    "rootDir": "src",
+    "baseUrl": "src",
+    "paths": {
+      "@src/*": [
+        "*"
+      ],
+      "@controllers/*": [
+        "controllers/*"
+      ],
+      "@datasources/*": [
+        "datasources/*"
+      ],
+      "@interceptors/*": [
+        "interceptors/*"
+      ],
+      "@models/*": [
+        "models/*"
+      ],
+      "@providers/*": [
+        "providers/*"
+      ],
+      "@repositories/*": [
+        "repositories/*"
+      ],
+      "@services/*": [
+        "services/*"
+      ]
+    }
   },
-  "include": ["src"]
+  "include": [
+    "src"
+  ]
 }

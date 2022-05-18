@@ -1,14 +1,20 @@
+import {AuthenticationBindings, AuthenticationComponent} from '@loopback/authentication';
+import {UserServiceBindings} from '@loopback/authentication-jwt';
 import {BootMixin} from '@loopback/boot';
-import {ApplicationConfig} from '@loopback/core';
-import {
-  RestExplorerBindings,
-  RestExplorerComponent,
-} from '@loopback/rest-explorer';
+import {addExtension, ApplicationConfig, Constructor} from '@loopback/core';
 import {RepositoryMixin} from '@loopback/repository';
 import {RestApplication} from '@loopback/rest';
+import {
+  RestExplorerBindings,
+  RestExplorerComponent
+} from '@loopback/rest-explorer';
 import {ServiceMixin} from '@loopback/service-proxy';
+import {PassportDiscordAuthProvider} from '@providers/discord-auth-strategy';
 import path from 'path';
+import {DbDataSource} from './datasources';
+import {PassportGithubAuthProvider} from './providers/github-auth-strategy';
 import {MySequence} from './sequence';
+
 
 export {ApplicationConfig};
 
@@ -18,6 +24,7 @@ export class TodoListApplication extends BootMixin(
   constructor(options: ApplicationConfig = {}) {
     super(options);
 
+    // ----- DEFAULT -----
     // Set up the custom sequence
     this.sequence(MySequence);
 
@@ -40,5 +47,30 @@ export class TodoListApplication extends BootMixin(
         nested: true,
       },
     };
+
+
+    // ----- AUTHENTICATION -----
+    // Mount authentication system
+    this.component(AuthenticationComponent);
+    // Bind datasource
+    this.dataSource(DbDataSource, UserServiceBindings.DATASOURCE_NAME);
+
+    this.addAuthProviders([
+      PassportDiscordAuthProvider,
+      PassportGithubAuthProvider
+    ]);
+  }
+
+  addAuthProviders(authProviders: Constructor<unknown>[]) {
+    authProviders.forEach((provider) => {
+      addExtension(
+        this,
+        AuthenticationBindings.AUTHENTICATION_STRATEGY_EXTENSION_POINT_NAME,
+        provider,
+        {
+          namespace: AuthenticationBindings.AUTHENTICATION_STRATEGY_EXTENSION_POINT_NAME
+        }
+      );
+    });
   }
 }
